@@ -6,10 +6,11 @@ PROBLEM : PRETTY JSON
 #include <bits/stdc++.h>
 using namespace std;
 
-int main() {
+vector<string> sol(string a)
+{
     int c=0;
-    string a,b;
-    cin >> a;
+    string b;
+    vector<string> d;
     for(auto i=0; i<a.length(); i++)
     {
         if(a[i]=='[' || a[i]=='{')
@@ -46,10 +47,19 @@ int main() {
             b += a[i];
         }
     }
-    for(auto i=0; i<b.length(); i++)
+    d.push_back(b);
+    return d;
+}
+int main() {
+    string A;
+    vector<string> b;
+    cin >> A;
+    b = sol(A);
+    for(auto x: b)
     {
-        cout<< b[i];
+        cout<< x;
     }
     return 0;
 }
+
 
